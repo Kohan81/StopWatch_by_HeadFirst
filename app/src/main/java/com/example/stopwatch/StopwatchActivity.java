@@ -1,14 +1,7 @@
 package com.example.stopwatch;
 
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import android.app.Activity;
-import android.os.Bundle;
 import android.view.View;
 import java.util.Locale;
 import android.os.Handler;
@@ -41,15 +34,15 @@ public class StopwatchActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
+    protected void onPause() {
+        super.onPause();
         wasRunning = running;
         running = false;
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
         if (wasRunning) {
             running = true;
         }
